@@ -1,68 +1,86 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>IgualCast - Campanhas de Apoio</title>
-    
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Projeto IgualCast: promovendo igualdade de gênero através de podcasts, campanhas educativas e acolhimento." />
+
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 </head>
 <body>
-
     <header>
         <div class="top-bar"></div>
         <div class="header-content">
             <div class="header-logo-and-nav">
                 <div class="logo-container" data-aos="fade-down">
-                    <a href="#">
-                        <img src="logo.png" alt="Logo IgualCast" class="logo">
+                    <a href="#inicio">
+                        <img src="logo.png" alt="Logotipo do projeto IgualCast com uma borboleta" class="logo" width="150" height="auto" />
                     </a>
                 </div>
-                <div class="start" data-aos="fade-down">
-                    <nav>
-                        <ul>
-                            <li><a href="#inicio">Início</a></li>
-                            <li><a href="#oque-fazemos">O que fazemos</a></li>
-                            <li><a href="#quem-somos">Quem Somos Nós</a></li>
-                            <li><a href="#campanhas">Campanhas</a></li>
-                        </ul>
-                    </nav>
-                </div>
+                
+                <button class="menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+                
+                <nav class="nav-menu" aria-label="Navegação principal" data-aos="fade-down">
+                    <ul>
+                        <li><a href="#inicio" class="nav-link">Início</a></li>
+                        <li><a href="#oque-fazemos" class="nav-link">O que fazemos</a></li>
+                        <li><a href="#quem-somos" class="nav-link">Quem somos</a></li>
+                        <li><a href="#campanhas" class="nav-link">Campanhas</a></li>
+                    </ul>
+                </nav>
             </div>
-            
-            <div class="hero">
+
+            <div class="hero" id="inicio">
                 <h1 class="logo_escrita" data-aos="zoom-in">Igual Cast</h1>
                 <p class="slogan" data-aos="fade-up">Reflexões e Ações pela Igualdade de Gênero</p>
-                <a href="https://exemplo.com/podcasts" target="_blank" class="btn-podcast" data-aos="fade-up" data-aos-delay="500">Ouça nossos Podcasts</a>
+                <a
+                    href="https://exemplo.com/podcasts"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-podcast"
+                    data-aos="fade-up"
+                    data-aos-delay="500"
+                >
+                    Ouça nossos Podcasts
+                </a>
             </div>
-            
-
         </div>
     </header>
-    
 
     <main>
         <section id="oque-fazemos" class="section-fazemos" data-aos="fade-right">
-            <div class="content-wrapper">
+            <div class="container">
                 <div class="bubble-box">
                     <h2>O que fazemos</h2>
                     <p>
-                    O Projeto FalaIgual, desenvolvido por alunos do SENAC, nasceu com o propósito de promover a conscientização sobre a violência doméstica e verbal contra as mulheres, alinhando-se ao ODS 5 - Igualdade de Gênero da ONU.<br>Nosso objetivo é claro: incentivar mulheres a buscarem ajuda e não aceitarem qualquer tipo de agressão. Acreditamos na força do acolhimento, da informação e do diálogo para transformar realidades.</p>
+                        O Projeto FalaIgual, desenvolvido por alunos do SENAC, nasceu com o propósito de promover a conscientização sobre a violência doméstica e verbal contra as mulheres, alinhando-se ao ODS 5 - Igualdade de Gênero da ONU.
+                    </p>
+                    <p>
+                        Nosso objetivo é claro: incentivar mulheres a buscarem ajuda e não aceitarem qualquer tipo de agressão. Acreditamos na força do acolhimento, da informação e do diálogo para transformar realidades.
+                    </p>
                 </div>
-                <div class="image-box-fazemos">
-                    </div>
             </div>
         </section>
 
         <section id="significado-logo" class="section-significado" data-aos="fade-left">
-            <div class="content-wrapper-reverse">
-                <div class="image-box-significado">
-                    <img src="logo.png" alt="O significado da nossa logo">
-                </div>
-                <div class="text-box-significado">
-                    <h2>O que significa nossa logo</h2>
-                    <p>A borboleta significa a renovação e liberdade!</p>
+            <div class="container">
+                <div class="content-wrapper-reverse logo-meaning-wrapper">
+                    <div class="image-box-significado">
+                        <img src="logo.png" alt="Logo com borboleta representando liberdade" width="200" height="auto" />
+                    </div>
+                    <div class="text-box-significado">
+                        <h2>O que significa nossa logo</h2>
+                        <p>
+                            A borboleta representa transformação, liberdade e renovação. Ela simboliza a jornada de superação das mulheres que lutam contra a violência e buscam uma vida mais justa e igualitária.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -86,7 +104,9 @@
         <section id="campanhas" class="section-campanhas" data-aos="fade-left">
             <div class="container">
                 <h2 data-aos="fade-down">Nossas Campanhas de Apoio</h2>
-                <p data-aos="fade-up">Realizamos campanhas para apoiar mulheres que sofrem violência doméstica e verbal através de:</p>
+                <p data-aos="fade-up">
+                    Realizamos campanhas para apoiar mulheres que sofrem violência doméstica e verbal através de:
+                </p>
                 <div class="campanhas-list">
                     <div class="campanha-item" data-aos="flip-left" data-aos-delay="200">
                         <h3>Podcast</h3>
@@ -101,10 +121,69 @@
         </section>
     </main>
 
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 IgualCast. Todos os direitos reservados.</p>
+            <p>Desenvolvido por alunos do SENAC - Projeto FalaIgual.</p>
+        </div>
+    </footer>
+
+    <!-- Overlay para fechar menu ao clicar fora -->
+    <div class="menu-overlay"></div>
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({
-            duration: 1000,
+        AOS.init({ duration: 1000 });
+        
+        // JavaScript para o menu hamburger
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        const menuOverlay = document.querySelector('.menu-overlay');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        // Função para abrir/fechar menu
+        function toggleMenu() {
+            const isOpen = navMenu.classList.contains('active');
+            
+            if (isOpen) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+        }
+
+        // Função para abrir menu
+        function openMenu() {
+            navMenu.classList.add('active');
+            menuToggle.classList.add('active');
+            menuOverlay.classList.add('active');
+            menuToggle.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden'; // Previne scroll
+        }
+
+        // Função para fechar menu
+        function closeMenu() {
+            navMenu.classList.remove('active');
+            menuToggle.classList.remove('active');
+            menuOverlay.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = ''; // Restaura scroll
+        }
+
+        // Event listeners
+        menuToggle.addEventListener('click', toggleMenu);
+        menuOverlay.addEventListener('click', closeMenu);
+
+        // Fechar menu ao clicar em um link
+        navLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        // Fechar menu com tecla ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+                closeMenu();
+            }
         });
     </script>
 </body>

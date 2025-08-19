@@ -1,6 +1,6 @@
 /* Importação da fonte para um visual melhor */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap");
 
 /* Rolagem suave ao clicar em links internos */
 html {
@@ -19,12 +19,10 @@ html {
     --preto: #2c2c2c;
 }
 
-/* Reset CSS e estilos base */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+    font-family: "Montserrat", sans-serif;
 }
 
 body {
@@ -37,6 +35,7 @@ body {
     max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
+    width: 100%;
 }
 
 h2 {
@@ -54,26 +53,32 @@ header {
     text-align: center;
     position: relative;
     overflow: hidden;
+    width: 100%;
 }
 
 .top-bar {
-    background-color: var(--azul-escuro); 
-    height: 10px; 
+    background-color: var(--azul-escuro);
+    height: 10px;
     width: 100%;
 }
 
 .header-content {
     padding: 20px;
+    width: 100%;
 }
 
 .header-logo-and-nav {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    position: relative;
 }
 
 .logo-container {
     padding-bottom: 20px;
+    z-index: 999;
+    position: relative;
 }
 
 .logo {
@@ -82,14 +87,78 @@ header {
     display: block;
 }
 
-nav ul {
+/* --------------------------------- */
+/* MENU HAMBURGER */
+/* --------------------------------- */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1002;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    transition: transform 0.3s ease;
+}
+
+.hamburger-line {
+    width: 30px;
+    height: 3px;
+    background: var(--branco);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    transform-origin: 1px;
+}
+
+.menu-toggle.active .hamburger-line:first-child {
+    transform: rotate(45deg);
+}
+
+.menu-toggle.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+/* Menu overlay para fechar ao clicar fora */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* --------------------------------- */
+/* NAVEGAÇÃO PRINCIPAL */
+/* --------------------------------- */
+.nav-menu ul {
     list-style: none;
     display: flex;
     justify-content: center;
     gap: 30px;
+    flex-wrap: wrap;
 }
 
-nav a {
+.nav-menu a {
     color: var(--branco);
     text-decoration: none;
     font-weight: bold;
@@ -97,25 +166,28 @@ nav a {
     transition: color 0.3s ease;
 }
 
-nav a:hover {
+.nav-menu a:hover {
     color: var(--rosa-claro);
 }
 
+/* --------------------------------- */
 /* HERO SECTION */
+/* --------------------------------- */
 .hero {
     padding: 50px 20px;
+    width: 100%;
 }
 
 .logo_escrita {
-    font-family: 'Dancing Script', cursive;
-    font-size: 8rem;
+    font-family: "Dancing Script", cursive;
+    font-size: clamp(4rem, 8vw, 8rem);
     margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .slogan {
     font-style: italic;
-    font-size: 1.8rem;
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
     margin-bottom: 20px;
 }
 
@@ -134,62 +206,51 @@ nav a:hover {
     background-color: var(--branco);
 }
 
-.ideia {
-    font-size: 1.5rem;
-    padding: 1.5rem;
-    margin-bottom: 3rem;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 /* --------------------------------- */
 /* SEÇÕES PRINCIPAIS */
 /* --------------------------------- */
 section {
     padding: 80px 20px;
     text-align: center;
+    width: 100%;
 }
 
-/* SEÇÃO "O QUE FAZEMOS" */
-.section-fazemos, .section-significado {
+.section-fazemos,
+.section-significado {
     background-color: var(--rosa-escuro);
     font-size: 1.1rem;
 }
 
-.content-wrapper, .content-wrapper-reverse {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-    flex-wrap: wrap;
-}
-
-.bubble-box, .text-box-significado {
+.bubble-box,
+.text-box-significado {
     background-color: var(--rosa-medio);
     padding: 40px;
     border-radius: 40px;
     position: relative;
     max-width: 500px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     text-align: left;
+    margin: 0 auto;
+    width: 100%;
 }
 
-.image-box-fazemos img, .image-box-significado img {
-    height: 300px;
-    width: auto;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-/* SEÇÃO "SIGNIFICADO DA LOGO" */
 .content-wrapper-reverse {
     flex-direction: row-reverse;
 }
 
-/* SEÇÃO "QUEM SOMOS" */
+.logo-meaning-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    width: 100%;
+}
+
+.image-box-significado {
+    flex-shrink: 0;
+}
+
 .section-quem-somos {
     background-color: var(--rosa-escuro);
 }
@@ -202,6 +263,7 @@ section {
     flex-wrap: wrap;
     gap: 30px;
     margin-top: 30px;
+    width: 100%;
 }
 
 .team-list li {
@@ -213,7 +275,6 @@ section {
     border-radius: 10px;
 }
 
-/* SEÇÃO "CAMPANHAS" */
 .section-campanhas {
     background-color: var(--rosa-escuro);
 }
@@ -224,20 +285,22 @@ section {
     gap: 30px;
     flex-wrap: wrap;
     margin-top: 40px;
+    width: 100%;
 }
 
 .campanha-item {
     background-color: var(--branco);
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 300px;
+    width: 100%;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .campanha-item:hover {
     transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .campanha-item h3 {
@@ -245,19 +308,149 @@ section {
     margin-bottom: 15px;
 }
 
+.footer {
+    background-color: var(--azul-claro);
+    text-align: center;
+    padding: 30px 20px;
+    color: var(--preto);
+    font-size: 0.95rem;
+    width: 100%;
+}
+
 /* --------------------------------- */
 /* MEDIA QUERIES (RESPONSIVIDADE) */
 /* --------------------------------- */
 @media (max-width: 768px) {
+    /* Mostrar menu hamburger */
+    .menu-toggle {
+        display: flex;
+    }
+    
+    /* Header adjustments */
+    .header-logo-and-nav {
+        flex-direction: column;
+        position: relative;
+    }
+    
+    .logo-container {
+        padding-bottom: 10px;
+    }
+    
+    /* Menu mobile */
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        height: 100vh;
+        width: 280px;
+        background: linear-gradient(135deg, var(--rosa-escuro), var(--azul-medio));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: left 0.3s ease;
+        z-index: 1000;
+        box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-menu ul {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+        width: 100%;
+        padding: 20px;
+    }
+    
+    .nav-menu li {
+        opacity: 0;
+        transform: translateX(-50px);
+        animation: slideIn 0.3s ease forwards;
+    }
+    
+    .nav-menu.active li:nth-child(1) { animation-delay: 0.1s; }
+    .nav-menu.active li:nth-child(2) { animation-delay: 0.2s; }
+    .nav-menu.active li:nth-child(3) { animation-delay: 0.3s; }
+    .nav-menu.active li:nth-child(4) { animation-delay: 0.4s; }
+    
+    .nav-menu a {
+        font-size: 1.3rem;
+        padding: 10px 20px;
+        border-radius: 8px;
+        display: block;
+        transition: all 0.3s ease;
+    }
+    
+    .nav-menu a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: var(--branco);
+    }
+    
+    /* Animação dos itens do menu */
+    @keyframes slideIn {
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    
+    /* Outros ajustes mobile */
     .logo_escrita {
         font-size: 4rem;
     }
     
-    .slogan, .ideia {
+    .slogan {
         font-size: 1.2rem;
     }
     
-    .content-wrapper, .content-wrapper-reverse {
+    .campanhas-list {
+        gap: 20px;
+    }
+    
+    .logo-meaning-wrapper {
         flex-direction: column;
+        gap: 20px;
+    }
+}
+
+/* Estados focus para acessibilidade */
+.menu-toggle:focus {
+    outline: 2px solid var(--branco);
+    outline-offset: 4px;
+}
+
+.nav-menu a:focus {
+    outline: 2px solid var(--rosa-claro);
+    outline-offset: 2px;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+    
+    section {
+        padding: 40px 15px;
+    }
+    
+    .bubble-box,
+    .text-box-significado {
+        padding: 25px;
+    }
+    
+    .nav-menu {
+        width: 100%;
+        left: -100%;
+    }
+    
+    .menu-toggle {
+        top: 15px;
+        left: 15px;
+    }
+    
+    h2 {
+        font-size: 2rem;
     }
 }
