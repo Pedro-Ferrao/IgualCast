@@ -1,0 +1,263 @@
+/* Importação da fonte para um visual melhor */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+/* Rolagem suave ao clicar em links internos */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Variáveis de cor (paleta) */
+:root {
+    --rosa-claro: #f4e8e8;
+    --rosa-medio: #c3beef;
+    --rosa-escuro: #c7daf5;
+    --azul-claro: #d6e6e7;
+    --azul-medio: #cca9e8;
+    --azul-escuro: #6b8a9c;
+    --branco: #ffffff;
+    --preto: #2c2c2c;
+}
+
+/* Reset CSS e estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: var(--rosa-claro);
+    color: var(--preto);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--azul-escuro);
+}
+
+/* --------------------------------- */
+/* HEADER E NAVEGAÇÃO */
+/* --------------------------------- */
+header {
+    background: linear-gradient(135deg, var(--rosa-escuro), var(--azul-medio));
+    color: var(--branco);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.top-bar {
+    background-color: var(--azul-escuro); 
+    height: 10px; 
+    width: 100%;
+}
+
+.header-content {
+    padding: 20px;
+}
+
+.header-logo-and-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-container {
+    padding-bottom: 20px;
+}
+
+.logo {
+    max-width: 150px;
+    height: auto;
+    display: block;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav a {
+    color: var(--branco);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--rosa-claro);
+}
+
+/* HERO SECTION */
+.hero {
+    padding: 50px 20px;
+}
+
+.logo_escrita {
+    font-family: 'Dancing Script', cursive;
+    font-size: 8rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.slogan {
+    font-style: italic;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.btn-podcast {
+    display: inline-block;
+    background-color: var(--rosa-claro);
+    color: var(--preto);
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-podcast:hover {
+    background-color: var(--branco);
+}
+
+.ideia {
+    font-size: 1.5rem;
+    padding: 1.5rem;
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --------------------------------- */
+/* SEÇÕES PRINCIPAIS */
+/* --------------------------------- */
+section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+/* SEÇÃO "O QUE FAZEMOS" */
+.section-fazemos, .section-significado {
+    background-color: var(--rosa-escuro);
+    font-size: 1.1rem;
+}
+
+.content-wrapper, .content-wrapper-reverse {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.bubble-box, .text-box-significado {
+    background-color: var(--rosa-medio);
+    padding: 40px;
+    border-radius: 40px;
+    position: relative;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.image-box-fazemos img, .image-box-significado img {
+    height: 300px;
+    width: auto;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* SEÇÃO "SIGNIFICADO DA LOGO" */
+.content-wrapper-reverse {
+    flex-direction: row-reverse;
+}
+
+/* SEÇÃO "QUEM SOMOS" */
+.section-quem-somos {
+    background-color: var(--rosa-escuro);
+}
+
+.team-list ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.team-list li {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--preto);
+    background-color: var(--rosa-claro);
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+/* SEÇÃO "CAMPANHAS" */
+.section-campanhas {
+    background-color: var(--rosa-escuro);
+}
+
+.campanhas-list {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.campanha-item {
+    background-color: var(--branco);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    max-width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.campanha-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.campanha-item h3 {
+    color: var(--azul-escuro);
+    margin-bottom: 15px;
+}
+
+/* --------------------------------- */
+/* MEDIA QUERIES (RESPONSIVIDADE) */
+/* --------------------------------- */
+@media (max-width: 768px) {
+    .logo_escrita {
+        font-size: 4rem;
+    }
+    
+    .slogan, .ideia {
+        font-size: 1.2rem;
+    }
+    
+    .content-wrapper, .content-wrapper-reverse {
+        flex-direction: column;
+    }
+}
