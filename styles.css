@@ -21,8 +21,10 @@ html {
 
 html, body {
     width: 100%;
+    max-width: 100%;
     overflow-x: hidden;
     font-family: "Montserrat", sans-serif;
+    position: relative;
 }
 
 body {
@@ -36,6 +38,7 @@ body {
     margin: 0 auto;
     padding: 20px;
     width: 100%;
+    box-sizing: border-box;
 }
 
 h2 {
@@ -54,6 +57,8 @@ header {
     position: relative;
     overflow: hidden;
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .top-bar {
@@ -65,6 +70,8 @@ header {
 .header-content {
     padding: 20px;
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .header-logo-and-nav {
@@ -72,12 +79,14 @@ header {
     flex-direction: column;
     align-items: center;
     width: 100%;
+    max-width: 100%;
     position: relative;
+    box-sizing: border-box;
 }
 
 .logo-container {
     padding-bottom: 20px;
-    z-index: 999;
+    z-index: 1001;
     position: relative;
 }
 
@@ -176,6 +185,8 @@ header {
 .hero {
     padding: 50px 20px;
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .logo_escrita {
@@ -213,6 +224,9 @@ section {
     padding: 80px 20px;
     text-align: center;
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .section-fazemos,
@@ -231,7 +245,8 @@ section {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     text-align: left;
     margin: 0 auto;
-    width: 100%;
+    width: calc(100% - 40px);
+    box-sizing: border-box;
 }
 
 .content-wrapper-reverse {
@@ -245,6 +260,8 @@ section {
     flex-wrap: wrap;
     gap: 40px;
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .image-box-significado {
@@ -264,6 +281,8 @@ section {
     gap: 30px;
     margin-top: 30px;
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .team-list li {
@@ -286,6 +305,8 @@ section {
     flex-wrap: wrap;
     margin-top: 40px;
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .campanha-item {
@@ -295,7 +316,9 @@ section {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 300px;
     width: 100%;
+    min-width: 250px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
 }
 
 .campanha-item:hover {
@@ -315,6 +338,8 @@ section {
     color: var(--preto);
     font-size: 0.95rem;
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 /* --------------------------------- */
@@ -414,7 +439,6 @@ section {
         gap: 20px;
     }
 }
-
 /* Estados focus para acessibilidade */
 .menu-toggle:focus {
     outline: 2px solid var(--branco);
@@ -429,6 +453,7 @@ section {
 @media (max-width: 480px) {
     .container {
         padding: 15px;
+        margin: 0 auto;
     }
     
     section {
@@ -438,6 +463,8 @@ section {
     .bubble-box,
     .text-box-significado {
         padding: 25px;
+        width: calc(100% - 30px);
+        margin: 0 auto;
     }
     
     .nav-menu {
@@ -452,5 +479,11 @@ section {
     
     h2 {
         font-size: 2rem;
+    }
+    
+    .campanha-item {
+        min-width: auto;
+        width: calc(100% - 30px);
+        margin: 0 auto;
     }
 }
