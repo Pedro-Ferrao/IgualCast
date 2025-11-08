@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IgualCast - Nossos Podcasts</title>
+    <meta name="description" content="Ouça os podcasts do projeto IgualCast, reflexões e ações pela igualdade de gênero." />
+
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="styles.css" /> 
+    <link rel="stylesheet" href="podcasts.css" /> 
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+</head>
+<body>
+    <header class="podcasts-header">
+<header class="podcasts-header">
+    <div class="top-bar"></div>
+    <div class="header-content">
+        <div class="hero podcasts-hero" id="inicio">
+            <h1 class="logo_escrita" data-aos="zoom-in">IgualCast </h1>
+            <p class="slogan" data-aos="fade-up">Aprofunde-se em nossas discussões e debates.</p>
+            
+            <a href="https://pedro-ferrao.github.io/IgualCast/" class="btn-voltar" data-aos="fade-up" data-aos-delay="600">
+                ← Voltar para a Página Inicial
+            </a>
+            
+        </div>
+    </div>
+</header>
+    </header>
+
+    <main>
+        <section id="lista-podcasts" class="section-podcasts">
+            <div class="container">
+                <h2 data-aos="fade-right">Nossos Últimos Episódios</h2>
+                <p data-aos="fade-left">Clique na capa para assistir!</p>
+                
+                <div class="podcast-grid">
+                    
+<div class="podcast-item" data-aos="fade-up" data-aos-delay="100">
+    <h3>Episódio 01: Assédio</h3>
+    <a href="https://www.youtube.com/watch?v=KigKvVTpSHE" target="_blank" class="youtube-link-container" data-video-id="KigKvVTpSHE">
+        </a>
+    <p>Nosso primeiro episódio Uma conversa direta sobre o que é assédio e como identificar situações de abuso.</p>
+</div>
+
+<div class="podcast-item" data-aos="fade-up" data-aos-delay="200">
+    <h3>Episódio 02: Desafios da mulher no mercado de trabalho </h3>
+    <a href="https://www.youtube.com/watch?v=dcFHcE_bMW4" target="_blank" class="youtube-link-container" data-video-id="dcFHcE_bMW4">
+        </a>
+    <p>Neste episódio, observamos os principais obstáculos enfrentados por mulheres no trabalho.</p>
+</div>
+
+<div class="podcast-item" data-aos="fade-up" data-aos-delay="300">
+    <h3>Episódio 03: Bullying e machismo nas escolas </h3>
+    <a href="https://www.youtube.com/watch?v=vxUsEcjUNJg" target="_blank" class="youtube-link-container" data-video-id="vxUsEcjUNJg">
+        </a>
+    <p>Como o machismo aparece na escola e afeta o ambiente escolar.</p>
+</div>
+
+<div class="podcast-item" data-aos="fade-up" data-aos-delay="300">
+    <h3>Episódio 04: A imagem da mulher na mídia e nas redes sociais. </h3>
+    <a href="https://www.youtube.com/watch?v=dfHgkK8Wkm0" target="_blank" class="youtube-link-container" data-video-id="dfHgkK8Wkm0">
+        </a>
+    <p>Como a mídia molda padrões irreais e influencia a percepção sobre a mulher.</p>
+</div>
+
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 IgualCast. Todos os direitos reservados.</p>
+            <p>Desenvolvido por alunos do SENAC - Projeto FalaIgual.</p>
+        </div>
+    </footer>
+
+    
+    <div class="menu-overlay"></div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000 });
+        
+        // --- 1. SCRIPT PARA GERAÇÃO DA IMAGEM DE CAPA ---
+        document.querySelectorAll('.youtube-link-container').forEach(link => {
+            const videoId = link.getAttribute('data-video-id');
+            // URL para obter a imagem de capa (thumbnail) de alta qualidade
+            const placeholderImageUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`; 
+            
+            // 1. Cria a imagem de capa
+            const image = document.createElement('img');
+            image.src = placeholderImageUrl;
+            image.alt = 'Clique para assistir no YouTube';
+            
+            // 2. Cria o botão de play (ícone)
+            const playButton = document.createElement('div');
+            playButton.className = 'play-button';
+
+            link.appendChild(image);
+            link.appendChild(playButton);
+        });
+        // --- FIM SCRIPT DE CAPA ---
+
+
+        // --- 2. SCRIPT DO MENU HAMBURGER (Versão Limpa) ---
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        const menuOverlay = document.querySelector('.menu-overlay');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const body = document.body;
+
+        function toggleMenu() {
+            const isOpen = navMenu.classList.contains('active');
+            if (isOpen) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+        }
+
+        function openMenu() {
+            navMenu.classList.add('active');
+            menuToggle.classList.add('active');
+            menuOverlay.classList.add('active');
+            menuToggle.setAttribute('aria-expanded', 'true');
+            body.classList.add('menu-open'); 
+        }
+
+        function closeMenu() {
+            navMenu.classList.remove('active');
+            menuToggle.classList.remove('active');
+            menuOverlay.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            body.classList.remove('menu-open'); 
+        }
+
+        menuToggle.addEventListener('click', toggleMenu);
+        menuOverlay.addEventListener('click', closeMenu);
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+                closeMenu();
+            }
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
+                closeMenu();
+            }
+        });
+        // --- FIM SCRIPT DE MENU ---
+    </script>
+</body>
+</html>

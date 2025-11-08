@@ -1,0 +1,175 @@
+body.menu-open {
+    overflow: hidden; 
+}
+
+
+.nav-menu .current-page {
+    color: var(--rosa-claro); 
+    border-bottom: 2px solid var(--rosa-claro); 
+    padding-bottom: 5px; 
+}
+
+
+.section-podcasts {
+    background-color: var(--rosa-escuro);
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.section-podcasts h2 {
+    color: var(--azul-escuro);
+    margin-bottom: 15px;
+    font-size: 2.5rem;
+}
+
+.section-podcasts p {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    color: var(--preto);
+}
+
+/* Grid para os itens de podcast */
+.podcast-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.podcast-item {
+    background-color: var(--branco);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.podcast-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.podcast-item h3 {
+    color: var(--azul-escuro);
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.podcast-item p {
+    font-size: 1rem;
+    color: var(--preto);
+    margin-top: 15px;
+    line-height: 1.5;
+}
+
+/* 3. Estilos do Container de Link (O novo player visual) */
+.youtube-link-container {
+    display: block; 
+    text-decoration: none;
+    position: relative;
+    width: 100%;
+    /* Mantém a proporção 16:9 */
+    padding-bottom: 56.25%; 
+    height: 0;
+    overflow: hidden;
+    background-color: #000;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+}
+
+.youtube-link-container:hover {
+    box-shadow: 0 0 0 5px var(--rosa-claro);
+}
+
+/* Garante que a imagem ocupe todo o espaço */
+.youtube-link-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    object-fit: cover;
+}
+
+/* 4. Estilo para o botão de Play */
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 55px;
+    background-color: #f00; 
+    border-radius: 12px;
+    opacity: 0.85;
+    transition: opacity 0.3s, transform 0.3s;
+    z-index: 2;
+}
+
+.play-button:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-style: solid;
+    border-width: 14px 0 14px 25px;
+    border-color: transparent transparent transparent #fff;
+}
+
+.youtube-link-container:hover .play-button {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* --- NOVO ESTILO: BOTÃO VOLTAR PARA A PÁGINA INICIAL --- */
+
+.btn-voltar {
+    /* Herda o estilo do btn-podcast para manter a identidade visual */
+    display: inline-block;
+    padding: 12px 25px;
+    margin-top: 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    
+    /* Cores Invertidas para se destacar do Hero/Botão Podcast */
+    background-color: var(--branco); /* Fundo branco */
+    color: var(--azul-escuro); /* Texto azul escuro */
+    border: 2px solid var(--azul-escuro); /* Borda sólida */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-voltar:hover {
+    background-color: var(--azul-escuro); /* Inverte as cores no hover */
+    color: var(--branco); 
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Garante que o botão fique visível em dispositivos móveis */
+@media (max-width: 600px) {
+    .btn-voltar {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        margin-top: 20px;
+    }
+}
+
+
+/* Media Queries (Manter responsividade) */
+@media (max-width: 768px) {
+    .podcast-grid {
+        gap: 30px;
+        padding: 0 15px;
+    }
+}
